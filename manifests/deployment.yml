@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: team3 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: team3
+  template:
+    metadata:
+      labels:
+        app: team3 
+    spec:
+      containers:
+        - name: team3 
+          image: myappreg123.azurecr.io/team3
+          ports:
+          - containerPort: 8000
